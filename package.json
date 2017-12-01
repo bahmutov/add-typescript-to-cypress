@@ -12,13 +12,13 @@
         "npm run deps",
         "npm test",
         "git add src/*.js",
-        "npm run ban"
+        "echo skip npm run ban"
       ],
       "pre-push": [
         "npm run unused-deps",
         "npm run secure",
         "npm run license",
-        "npm run ban -- --all",
+        "echo skip npm run ban -- --all",
         "npm run size"
       ],
       "post-commit": [],
