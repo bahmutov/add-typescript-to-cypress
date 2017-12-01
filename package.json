@@ -62,7 +62,7 @@
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
     "test": "npm run unit",
     "unit": "mocha src/*-spec.js",
-    "unused-deps": "dependency-check --unused --no-dev .",
+    "unused-deps": "dependency-check --unused --no-dev . --entry src/add-plugin.js",
     "postinstall": "node src/add-plugin.js",
     "semantic-release": "semantic-release pre && npm publish --access public && semantic-release post"
   },
