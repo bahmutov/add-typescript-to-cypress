@@ -89,5 +89,8 @@
     "semantic-release": "8.2.0",
     "simple-commit-message": "3.3.2",
     "standard": "10.0.3"
+  },
+  "dependencies": {
+    "am-i-a-dependency": "1.1.2"
   }
 }

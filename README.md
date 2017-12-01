@@ -8,15 +8,27 @@
 [![semantic-release][semantic-image] ][semantic-url]
 [![js-standard-style][standard-image]][standard-url]
 
+## Why
+
+[Cypress](https://www.cypress.io/) is awesome, but does not come with TypeScript support right out of the box. Instead you need to install either [Cypress webpack preprocessor](https://github.com/cypress-io/cypress-webpack-preprocessor) or [Cypress browserify preprocessor](https://github.com/cypress-io/cypress-browserify-preprocessor) and configure them to [transpile TypeScript spec files](https://github.com/cypress-io/cypress-example-recipes/tree/master/examples/preprocessors__typescript-webpack).
+
+Which is too much hustle. With this module you just need to execute regular `npm install` command and you can write TypeScript spec files right away.
+
+**note** overwrites existing `cypress/plugins/index.js` file.
+
 ## Install
 
-Requires [Node](https://nodejs.org/en/) version 6 or above.
+After install Cypress (version 1.x) and opening it once to scaffold the projects:
 
 ```sh
-npm install --save @bahmutov/add-typescript-to-cypress
+npm install --save-dev @bahmutov/add-typescript-to-cypress
 ```
 
+This should create [cypress/plugins/index.js](src/plugin.js) that uses `webpack` preprocessor and `ts-loader` to transpile `.ts` files.
+
 ## Use
+
+Just start writing `*.ts` spec and supporting files and it should work.
 
 ### Small print
 
