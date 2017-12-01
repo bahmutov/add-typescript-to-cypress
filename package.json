@@ -91,7 +91,9 @@
     "standard": "10.0.3"
   },
   "dependencies": {
+    "@cypress/webpack-preprocessor": "1.1.0",
     "am-i-a-dependency": "1.1.2",
-    "shelljs": "0.7.8"
+    "shelljs": "0.7.8",
+    "ts-loader": "3.2.0"
   }
 }
