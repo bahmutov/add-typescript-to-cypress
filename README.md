@@ -26,6 +26,8 @@ npm install --save-dev @bahmutov/add-typescript-to-cypress
 
 This should create [cypress/plugins/index.js](src/plugin.js) that uses `webpack` preprocessor and `ts-loader` to transpile `.ts` files.
 
+**note** this module does NOT install TypeScript module, but lists it as a `peerDependency`. If your project does not have `typescript` yet, install it with `npm i -D typescript`.
+
 ## Use
 
 Just start writing `*.ts` spec and supporting files and it should work.
