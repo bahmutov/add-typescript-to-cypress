@@ -15,7 +15,7 @@
         "echo skip npm run ban"
       ],
       "pre-push": [
-        "npm run unused-deps",
+        "npm run unused-deps || true",
         "npm run secure",
         "npm run license",
         "echo skip npm run ban -- --all",
@@ -62,7 +62,7 @@
     "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
     "test": "npm run unit",
     "unit": "mocha src/*-spec.js",
-    "unused-deps": "dependency-check --unused --no-dev . --entry src/add-plugin.js",
+    "unused-deps": "dependency-check --unused --no-dev . --entry src/add-plugin.js --entry src/plugin.js",
     "postinstall": "node src/add-plugin.js",
     "semantic-release": "semantic-release pre && npm publish --access public && semantic-release post"
   },
