@@ -3,6 +3,7 @@ if (amDependency) {
   console.log('adding TypeScript plugin to Cypress')
   console.log('current folder', process.cwd())
 
+  const fs = require('fs')
   const path = require('path')
   const shell = require('shelljs')
   shell.set('-e')
@@ -19,4 +20,10 @@ if (amDependency) {
   const sourcePlugin = path.join(__dirname, 'plugin.js')
 
   shell.cp(sourcePlugin, pluginsIndex)
+
+  const tsConfig = path.join(root, 'tsconfig.json')
+  if (!fs.existsSync(tsConfig)) {
+    console.log('cannot find tsconfig.json, creating default')
+    fs.writeFileSync(tsConfig, '{}\n')
+  }
 }

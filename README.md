@@ -28,6 +28,8 @@ This should create [cypress/plugins/index.js](src/plugin.js) that uses `webpack`
 
 **note** this module does NOT install TypeScript module, but lists it as a `peerDependency`. If your project does not have `typescript` yet, install it with `npm i -D typescript`.
 
+**note** if there is no root `tsconfig.json`, empty file will be created, otherwise `ts-loader` crashes.
+
 ## Use
 
 Just start writing `*.ts` spec and supporting files and it should work.
