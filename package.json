@@ -51,7 +51,7 @@
   },
   "scripts": {
     "ban": "ban",
-    "deps": "deps-ok && dependency-check --no-dev .",
+    "deps": "deps-ok && dependency-check --no-dev . --entry src/add-plugin.js",
     "issues": "git-issues",
     "license": "license-checker --production --onlyunknown --csv",
     "lint": "standard --verbose --fix src/*.js",
@@ -91,6 +91,7 @@
     "standard": "10.0.3"
   },
   "dependencies": {
-    "am-i-a-dependency": "1.1.2"
+    "am-i-a-dependency": "1.1.2",
+    "shelljs": "0.7.8"
   }
 }
