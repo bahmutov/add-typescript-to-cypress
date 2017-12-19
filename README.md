@@ -34,6 +34,10 @@ This should create [cypress/plugins/index.js](src/plugin.js) that uses `webpack`
 
 Just start writing `*.ts` spec and supporting files and it should work.
 
+## Debug
+
+Install this package with environment variable `DEBUG=add-typescript-to-cypress`
+
 ### Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2017
