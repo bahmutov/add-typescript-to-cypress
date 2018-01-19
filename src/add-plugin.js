@@ -1,9 +1,10 @@
 const debug = require('debug')('add-typescript-to-cypress')
 const chalk = require('chalk')
+const terminalBanner = require('terminal-banner').terminalBanner
 const amDependency = require('am-i-a-dependency')()
+
 if (amDependency) {
-  console.log('adding TypeScript plugin to Cypress')
-  console.log('current folder', process.cwd())
+  debug('current folder', process.cwd())
 
   const fs = require('fs')
   const path = require('path')
@@ -17,6 +18,18 @@ if (amDependency) {
   // node_modules/@bahmutov/add-typescript-to-cypress
   const root = path.join(process.cwd(), '..', '..', '..')
   const cypressFolder = path.join(root, 'cypress')
+  const pluginsFolder = path.join(cypressFolder, 'plugins')
+  const ourPreprocessorFilename = path.join(
+    pluginsFolder,
+    'cy-ts-preprocessor.js'
+  )
+
+  if (fs.existsSync(ourPreprocessorFilename)) {
+    debug('found existing file', ourPreprocessorFilename)
+    debug('no need to overwrite again')
+    process.exit(0)
+  }
+
   if (!fs.existsSync(cypressFolder)) {
     console.error('⚠️ Cannot find "cypress" folder in %s', chalk.yellow(root))
     console.error('Please scaffold Cypress folder by opening Cypress once')
@@ -32,10 +45,14 @@ if (amDependency) {
   }
 
   const addPluginFile = () => {
-    const plugins = path.join(cypressFolder, 'plugins')
-    const pluginsIndex = path.join(plugins, 'index.js')
+    console.log('copying plugin file')
+    const pluginsIndex = path.join(pluginsFolder, 'index.js')
     const sourcePlugin = path.join(__dirname, 'plugin.js')
     shell.cp(sourcePlugin, pluginsIndex)
+
+    console.log('copying TS preprocessor file')
+    const sourcePreprocessor = path.join(__dirname, 'cy-ts-preprocessor.js')
+    shell.cp(sourcePreprocessor, ourPreprocessorFilename)
   }
 
   const addTSConfigFile = () => {
@@ -52,6 +69,7 @@ if (amDependency) {
     }
   }
 
+  terminalBanner('adding TypeScript plugin for Cypress')
   addPluginFile()
   addTSConfigFile()
 } else {

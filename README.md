@@ -14,7 +14,7 @@
 
 Which is too much hustle. With this module you just need to execute regular `npm install` command and you can write TypeScript spec files right away.
 
-**note** overwrites existing `cypress/plugins/index.js` file.
+**note** overwrites existing `cypress/plugins/index.js` file once. In other installs looks for file `cypress/plugins/cy-ts-preprocessor.js` to avoid overwriting.
 
 ## Install
 
