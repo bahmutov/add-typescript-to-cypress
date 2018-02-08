@@ -32,7 +32,13 @@ This should create [cypress/plugins/index.js](src/plugin.js) that uses `webpack`
 
 ## Use
 
-Just start writing `*.ts` spec and supporting files and it should work.
+Just start writing `*.ts` spec and supporting files and it should work. If the types are still not found, add to the top of the spec file the following line
+
+```
+/// <reference types="Cypress" />
+```
+
+See [this in action](https://www.youtube.com/watch?v=hxlrJAAeFeM&feature=youtu.be)
 
 ## Debug
 
