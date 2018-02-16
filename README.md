@@ -1,5 +1,7 @@
 # @bahmutov/add-typescript-to-cypress
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/bahmutov/add-typescript-to-cypress.svg)](https://greenkeeper.io/)
+
 > Quickly adds TypeScript spec support to Cypress
 
 [![NPM][npm-icon] ][npm-url]
