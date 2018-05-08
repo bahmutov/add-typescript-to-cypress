@@ -95,7 +95,7 @@
     "am-i-a-dependency": "1.1.2",
     "chalk": "2.3.1",
     "debug": "3.1.0",
-    "shelljs": "0.8.1",
+    "shelljs": "0.8.2",
     "terminal-banner": "1.1.0",
     "ts-loader": "3.5.0"
   },
