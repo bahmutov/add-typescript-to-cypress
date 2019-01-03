@@ -17,12 +17,25 @@ if (amDependency) {
   // during NPM post install phase it is running in
   // node_modules/@bahmutov/add-typescript-to-cypress
   const root = path.join(process.cwd(), '..', '..', '..')
-  const cypressFolder = path.join(root, 'cypress')
-  const pluginsFolder = path.join(cypressFolder, 'plugins')
-  const ourPreprocessorFilename = path.join(
-    pluginsFolder,
-    'cy-ts-preprocessor.js'
-  )
+  const cypressConfig = path.join(root, 'cypress.json')
+  let pluginsFolder = path.join(root, 'cypress', 'plugins')
+  let pluginsIndex = path.join(pluginsFolder, 'index.js')
+
+  // check if pluginsFile configuration set
+  if (fs.existsSync(cypressConfig)) {
+    try {
+      const config = JSON.parse(fs.readFileSync(cypressConfig))
+      if (config.pluginsFile != null && config.pluginsFile !== '') {
+        pluginsFolder = path.join(root, path.dirname(config.pluginsFile))
+        pluginsIndex = path.join(root, config.pluginsFile)
+      }
+    } catch (e) {
+      console.error('Error reading cypress configuration!')
+      process.exit(1)
+    }
+  }
+
+  const ourPreprocessorFilename = path.join(pluginsFolder, 'cy-ts-preprocessor.js')
 
   if (fs.existsSync(ourPreprocessorFilename)) {
     debug('found existing file', ourPreprocessorFilename)
@@ -30,15 +43,13 @@ if (amDependency) {
     process.exit(0)
   }
 
-  if (!fs.existsSync(cypressFolder)) {
-    console.error('⚠️ Cannot find "cypress" folder in %s', chalk.yellow(root))
+  if (!fs.existsSync(pluginsFolder)) {
+    console.error('⚠️ Cannot find cypress plugins folder in %s', chalk.yellow(root))
     console.error('Please scaffold Cypress folder by opening Cypress once')
     console.error('and then installing this package again')
     console.error(
       'See: %s',
-      chalk.underline(
-        'https://github.com/bahmutov/add-typescript-to-cypress/issues/3'
-      )
+      chalk.underline('https://github.com/bahmutov/add-typescript-to-cypress/issues/3')
     )
     console.error()
     process.exit(1)
@@ -46,7 +57,6 @@ if (amDependency) {
 
   const addPluginFile = () => {
     console.log('copying plugin file')
-    const pluginsIndex = path.join(pluginsFolder, 'index.js')
     const sourcePlugin = path.join(__dirname, 'plugin.js')
     shell.cp(sourcePlugin, pluginsIndex)
 
@@ -60,7 +70,7 @@ if (amDependency) {
     if (!fs.existsSync(tsConfigFilename)) {
       console.log('cannot find tsconfig.json, creating default')
       const tsConfig = {
-        include: ['node_modules/cypress', 'cypress/*/*.ts']
+        include: ['node_modules/cypress', 'cypress/*/*.ts'],
       }
       const text = JSON.stringify(tsConfig, null, 2) + '\n'
       fs.writeFileSync(tsConfigFilename, text)
