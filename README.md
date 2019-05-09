@@ -1,7 +1,5 @@
 # @bahmutov/add-typescript-to-cypress
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/bahmutov/add-typescript-to-cypress.svg)](https://greenkeeper.io/)
-
 > Quickly adds TypeScript spec support to Cypress
 
 [![NPM][npm-icon] ][npm-url]
@@ -9,6 +7,7 @@
 [![Build status][ci-image] ][ci-url]
 [![semantic-release][semantic-image] ][semantic-url]
 [![js-standard-style][standard-image]][standard-url]
+[![renovate-app badge][renovate-badge]][renovate-app]
 
 ## Why
 
@@ -92,3 +91,5 @@ OTHER DEALINGS IN THE SOFTWARE.
 [semantic-url]: https://github.com/semantic-release/semantic-release
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [standard-url]: http://standardjs.com/
+[renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
+[renovate-app]: https://renovateapp.com/
