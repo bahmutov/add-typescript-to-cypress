@@ -55,7 +55,7 @@
     "mocha": "5.0.1",
     "nsp": "3.2.1",
     "pre-git": "3.17.0",
-    "prettier-standard": "8.0.1",
+    "prettier-standard": "9.1.1",
     "semantic-release": "15.13.13",
     "standard": "10.0.3"
   },
