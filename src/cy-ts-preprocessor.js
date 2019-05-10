@@ -1,4 +1,5 @@
 const wp = require('@cypress/webpack-preprocessor')
+const path = require('path')
 
 const webpackOptions = {
   resolve: {

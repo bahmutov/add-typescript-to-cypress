@@ -1,1 +1,8 @@
-{}
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@utils/*": ["./cypress/integration/utils/*"]
+    }
+  }
+}
