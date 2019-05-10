@@ -27,9 +27,6 @@ jobs:
   include:
     - stage: 'Tests'
       name: 'Fixed Dependencies'
-    - name: 'Floating Depenencies'
-      before_install: rm package-lock.json
-      install: npm install
 
     - stage: 'Deploy'
       name: 'Publish to npm'
