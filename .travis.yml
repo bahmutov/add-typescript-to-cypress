@@ -11,10 +11,13 @@ stages:
   - name: 'Deploy'
     if: branch = master
 
-install: npm ci
+install:
+  - npm ci
+  - cd e2e; npm ci
 
 script:
   - npm test
+  - cd e2e: npm t
 
 jobs:
   fail_fast: true
