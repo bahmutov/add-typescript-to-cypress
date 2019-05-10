@@ -14,11 +14,13 @@ stages:
 
 install:
   - npm ci
-  - cd e2e; npm ci
+  - cd e2e
+  - npm ci
 
 script:
   - npm test
-  - cd e2e: npm t
+  - cd e2e
+  - npm t
 
 jobs:
   fail_fast: true
