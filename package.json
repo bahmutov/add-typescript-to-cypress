@@ -57,7 +57,8 @@
     "pre-git": "3.17.0",
     "prettier-standard": "9.1.1",
     "semantic-release": "15.13.13",
-    "standard": "10.0.3"
+    "standard": "10.0.3",
+    "cypress": "3.2.0"
   },
   "dependencies": {
     "@cypress/webpack-preprocessor": "4.0.3",

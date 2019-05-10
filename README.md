@@ -45,6 +45,21 @@ See [this in action](https://www.youtube.com/watch?v=hxlrJAAeFeM&feature=youtu.b
 
 Install this package with environment variable `DEBUG=add-typescript-to-cypress`
 
+## Eject
+
+If you want to uninstall this module after installing it once, then you need to still have the dependencies referenced from [src/cy-ts-preprocessor.js](src/cy-ts-preprocessor.js):
+
+- [@cypress/webpack-preprocessor](https://github.com/cypress-io/cypress-webpack-preprocessor#readme)
+- [ts-loader](https://github.com/TypeStrong/ts-loader)
+
+You can install them with
+
+```bash
+npm i -D @cypress/webpack-preprocessor ts-loader
+```
+
+and then uninstall this package.
+
 ### Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2017
