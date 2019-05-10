@@ -16,6 +16,7 @@ install:
   - npm ci
   - cd e2e
   - npm ci
+  - cd ..
 
 script:
   - npm test
