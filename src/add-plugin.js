@@ -57,6 +57,7 @@ if (amDependency) {
 
   const addTSConfigFile = () => {
     const tsConfigFilename = path.join(root, 'tsconfig.json')
+
     if (!fs.existsSync(tsConfigFilename)) {
       console.log('cannot find tsconfig.json, creating default')
       const tsConfig = {
@@ -66,6 +67,14 @@ if (amDependency) {
       fs.writeFileSync(tsConfigFilename, text)
     } else {
       console.log('file %s already exists', tsConfigFilename)
+      console.log('create only an extension tsconfig in the cypress folder')
+      const toFile = path.join(cypressFolder, 'tsconfig.json')
+      const tsConfig = {
+        extends: '../tsconfig.json',
+        include: ['../node_modules/cypress', '*/*.ts']
+      }
+      const text = JSON.stringify(tsConfig, null, 2) + '\n'
+      fs.writeFileSync(toFile, text)
     }
   }
 
