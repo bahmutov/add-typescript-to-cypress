@@ -56,7 +56,7 @@
     "nsp": "3.2.1",
     "pre-git": "3.17.1",
     "prettier-standard": "9.1.1",
-    "semantic-release": "15.13.13",
+    "semantic-release": "15.13.14",
     "standard": "12.0.1",
     "typescript": "3.4.5",
     "webpack": "4.31.0"
