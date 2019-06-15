@@ -58,7 +58,7 @@
     "prettier-standard": "9.1.1",
     "semantic-release": "15.13.16",
     "standard": "12.0.1",
-    "typescript": "3.5.1",
+    "typescript": "3.5.2",
     "webpack": "4.33.0"
   },
   "dependencies": {
