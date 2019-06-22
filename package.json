@@ -59,7 +59,7 @@
     "semantic-release": "15.13.16",
     "standard": "12.0.1",
     "typescript": "3.5.2",
-    "webpack": "4.34.0"
+    "webpack": "4.35.0"
   },
   "dependencies": {
     "@cypress/webpack-preprocessor": "4.1.0",
