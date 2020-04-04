@@ -16,7 +16,8 @@ if (amDependency) {
 
   // during NPM post install phase it is running in
   // node_modules/@bahmutov/add-typescript-to-cypress
-  const root = path.join(process.cwd(), '..', '..', '..')
+  const root =
+    process.env.INIT_CWD || path.join(process.cwd(), '..', '..', '..')
   const cypressFolder = path.join(root, 'cypress')
   const pluginsFolder = path.join(cypressFolder, 'plugins')
   const ourPreprocessorFilename = path.join(
