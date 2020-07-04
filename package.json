@@ -68,7 +68,7 @@
     "debug": "4.1.1",
     "shelljs": "0.8.3",
     "terminal-banner": "1.1.0",
-    "ts-loader": "5.4.5"
+    "ts-loader": "7.0.5"
   },
   "peerDependencies": {
     "typescript": "*"
