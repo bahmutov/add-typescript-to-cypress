@@ -12,7 +12,7 @@
   "license": "ISC",
   "devDependencies": {
     "cypress": "3.4.0",
-    "typescript": "3.5.3",
+    "typescript": "3.9.9",
     "webpack": "4.36.0"
   }
 }
