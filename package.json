@@ -64,7 +64,7 @@
   "dependencies": {
     "@cypress/webpack-preprocessor": "4.1.0",
     "am-i-a-dependency": "1.1.2",
-    "chalk": "2.4.2",
+    "chalk": "4.1.1",
     "debug": "4.1.1",
     "shelljs": "0.8.3",
     "terminal-banner": "1.1.0",
