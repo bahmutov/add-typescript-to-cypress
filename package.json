@@ -62,7 +62,7 @@
     "webpack": "4.36.0"
   },
   "dependencies": {
-    "@cypress/webpack-preprocessor": "4.1.0",
+    "@cypress/webpack-preprocessor": "5.9.0",
     "am-i-a-dependency": "1.1.2",
     "chalk": "2.4.2",
     "debug": "4.1.1",
